@@ -1,4 +1,5 @@
 # coding: utf-8
+import sys
 from ShortDetect import get_key_frames
 from img2txt import *
 import cv2

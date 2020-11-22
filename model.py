@@ -60,7 +60,7 @@ class CaptionModel(nn.Module):
         img = t.autograd.Variable(img.unsqueeze(0), volatile=True)
         img = self.fc(img).unsqueeze(0) # 这一步是什么意思?
         sentences, score = cap_gen.beam_search(img)
-        sentences = [' '.join([self.ix2word[idx] for idx in sent])
+        sentences = [' '.join([self.ix2word[idx.item()] for idx in sent])
                      for sent in sentences]
         return sentences
 
